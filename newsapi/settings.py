@@ -1,3 +1,4 @@
+# Project-wide settings
 """
 Django settings for newsapi project.
 

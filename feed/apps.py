@@ -1,3 +1,4 @@
+# Contains app-specific configuration
 from django.apps import AppConfig
 
 

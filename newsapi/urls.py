@@ -1,3 +1,4 @@
+# URL configurations
 """
 URL configuration for newsapi project.
 
