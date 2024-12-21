@@ -1,3 +1,5 @@
+# Main entry point for Django project management commands
+
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
