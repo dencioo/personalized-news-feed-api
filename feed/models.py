@@ -11,7 +11,7 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
     
-class Article(models.Model):
+class UserProfile(models.Model):
     # Extend the users model to store the preferences
     user = models.OneToOneField(User, on_delete=models.CASCADE) 
     preferred_categories = models.ManyToManyField('Category')
