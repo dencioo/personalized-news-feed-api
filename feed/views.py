@@ -1,5 +1,5 @@
 # Contains views that define the app's behavior
-from django.shortcuts import render
+from django.shortcuts import render #Django's tradtional view renderer
 from rest_framework import viewsets
 from .models import BlogPost, UserProfile, Category
 from .serializers import BlogPostSerializer, UserProfileSerializer, CategorySerializer
