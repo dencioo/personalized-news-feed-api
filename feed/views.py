@@ -5,11 +5,6 @@ from .models import BlogPost, UserProfile, Category
 from .serializers import BlogPostSerializer, UserProfileSerializer, CategorySerializer
 
 # Create your views here.
-
-class BlogPostListCreate(viewsets.ModelViewSet):
-    queryset = BlogPost.objects.all()
-    serializer_class = BlogPostSerializer
-
 class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer 
