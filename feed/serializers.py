@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import BlogPost, UserProfile, Category
+from .models import UserProfile, Category
 
 class CategorySerializer(serializers.ModelSerializer): # Serialize for the Category model
     class Meta:
