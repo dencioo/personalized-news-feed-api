@@ -10,7 +10,7 @@ class CategorySerializer(serializers.ModelSerializer): # Serialize for the Categ
 class UserProfileSerializer(serializers.ModelSerializer):   # Serialize for the UserProfile model
     # Use the CategorySerializer for many to many relationship
     # This insert the info about each news category in the user's prefrence
-    preffered_categories = CategorySerializer(many=True, readonly=True) 
+    preferred_categories = CategorySerializer(many=True, read_only=True) 
 
     class Meta:
         model = UserProfile
