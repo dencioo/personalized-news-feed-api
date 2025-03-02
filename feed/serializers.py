@@ -24,4 +24,4 @@ class UserSerializer(serializers.ModelSerializer): # Serialize for the User mode
 
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data) # This customization ensures that the password is hashed before being stored in the database
-        return user                                       # this uses Django's built-in create_user  
+        return user                                       # this uses Django's built-in create_userg
