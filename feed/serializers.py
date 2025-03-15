@@ -20,13 +20,15 @@ class UserSerializer(serializers.ModelSerializer): # Serialize for the User mode
     class Meta:
         model = User # Link the serializer to Django's buit-in User model
         fields = ['id', 'username', 'password', 'email']
-        extra_kwargs = {'password': {'write_only': True}} # This prevents from being exposed in API response
+        extra_kwargs = {'password': {'write_only': True}, # This prevents from being exposed in API response
+                        'email': {'required': True},    # This ensures that email is required
+                        } 
 
     def create(self, validated_data):
         email = validated_data.pop('email', None) # Extract the email safely
         user = User.objects.create_user(**validated_data) # This customization ensures that the password is hashed before being stored in the database
         
         if email:
-            user.email = email # This manually set the email
+            user.email = email   # This manually set the email
             user.save() # Save email to the user
         return user                                       # this uses Django's built-in create_userg
