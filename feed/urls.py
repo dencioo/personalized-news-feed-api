@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import (
@@ -13,7 +14,8 @@ router.register(r'userprofile', UserProfileViewSet) # This creates endpoints at 
 router.register(r'categories', CategoryViewSet) # This creates endpoints at /categories/
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('admin/', admin.site.urls),   # This is the admin site
+    path('', include(router.urls)),    # My DRF endpoints
     path('register/', UserCreate.as_view(), name='user-create'),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
